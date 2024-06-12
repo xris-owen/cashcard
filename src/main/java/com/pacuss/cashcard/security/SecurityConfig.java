@@ -42,19 +42,19 @@ class SecurityConfig {
         UserDetails owen = users
                 .username(loadDetailsFromPropertiesFile("user-owen"))
                 .password(passwordEncoder.encode(loadDetailsFromPropertiesFile("passwd-owen")))
-                .roles("CARD-OWNER") // No roles for now
+                .roles("CARD-OWNER")
                 .build();
 
         UserDetails kumar = users
                 .username(loadDetailsFromPropertiesFile("user-kumar"))
                 .password(passwordEncoder.encode(loadDetailsFromPropertiesFile("passwd-kumar")))
-                .roles("CARD-OWNER") // No roles for now
+                .roles("CARD-OWNER")
                 .build();
 
         UserDetails chris = users
                 .username(loadDetailsFromPropertiesFile("user-chris"))
                 .password(passwordEncoder.encode(loadDetailsFromPropertiesFile("passwd-chris")))
-                .roles("NO-CARD") // No roles for now
+                .roles("NO-CARD")
                 .build();
 
         return new InMemoryUserDetailsManager(owen, chris, kumar);
